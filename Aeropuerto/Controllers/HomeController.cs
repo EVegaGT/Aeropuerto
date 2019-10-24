@@ -43,7 +43,7 @@ namespace Aeropuerto.Controllers
 
             return View(cliente);
         }
-
+       
         public IActionResult Privacy()
         {
             return View();
