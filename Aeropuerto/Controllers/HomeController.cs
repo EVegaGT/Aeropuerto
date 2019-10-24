@@ -5,28 +5,43 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Aeropuerto.Models;
+using Aeropuerto.DB;
 
 namespace Aeropuerto.Controllers
 {
     public class HomeController : Controller
     {
+        private Context db;
+
+        public HomeController()
+        {
+            db = new Context();
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Vuelos()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Cliente()
         {
             ViewData["Message"] = "Your contact page.";
+            var cliente = new List<Cliente>();
+            using (var context = new Context())
+            {
 
-            return View();
+                cliente = context.Cliente.ToList();
+
+            }
+
+            return View(cliente);
         }
 
         public IActionResult Privacy()
