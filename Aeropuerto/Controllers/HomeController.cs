@@ -5,17 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Aeropuerto.Models;
-using Aeropuerto.DB;
+using Domain.Services;
 
 namespace Aeropuerto.Controllers
 {
     public class HomeController : Controller
     {
-        private Context db;
+        private IClienteService _clienteService;
 
-        public HomeController()
+        public HomeController(IClienteService clienteService)
         {
-            db = new Context();
+            _clienteService = clienteService;
         }
 
         public IActionResult Index()
@@ -33,13 +33,7 @@ namespace Aeropuerto.Controllers
         public IActionResult Cliente()
         {
             ViewData["Message"] = "Your contact page.";
-            var cliente = new List<Cliente>();
-            using (var context = new Context())
-            {
-
-                cliente = context.Cliente.ToList();
-
-            }
+            var cliente = _clienteService.GetAll();
 
             return View(cliente);
         }
