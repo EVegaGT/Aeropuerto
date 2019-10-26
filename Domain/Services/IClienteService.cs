@@ -9,5 +9,6 @@ namespace Domain.Services
         Cliente GetCliente(int id);
         void Create(Cliente cliente);
         void Edit(Cliente cliente);
+        void Delete(Cliente cliente);
     }
 }

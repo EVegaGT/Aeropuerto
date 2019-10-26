@@ -115,14 +115,32 @@
       <DependentUpon>AeropuertoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AeropuertoRepository.cs" />
+    <Compile Include="Repositories\AvionRepository.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\CommonRepository.cs" />
+    <Compile Include="Repositories\EmbarcacionRepository.cs" />
+    <Compile Include="Repositories\IAeropuertoRepository.cs" />
+    <Compile Include="Repositories\IAvionRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Repositories\IEmbarcacionRepository.cs" />
+    <Compile Include="Repositories\ILocalidadRepository.cs" />
+    <Compile Include="Repositories\IPaisRepository.cs" />
+    <Compile Include="Repositories\IReservaRepository.cs" />
+    <Compile Include="Repositories\LocalidadRepository.cs" />
+    <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\ReservaRepository.cs" />
     <Compile Include="Reserva.cs">
       <DependentUpon>AeropuertoDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\EmbarcacionService.cs" />
     <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="Services\IEmbarcacionService.cs" />
+    <Compile Include="Services\IPaisService.cs" />
+    <Compile Include="Services\IReservaService.cs" />
+    <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Services\ReservaService.cs" />
     <Compile Include="TarjetaEmbarque.cs">
       <DependentUpon>AeropuertoDB.tt</DependentUpon>
     </Compile>

@@ -104,7 +104,8 @@ namespace Api.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                var cliente = _clienteService.GetCliente(id);
+                _clienteService.Delete(cliente);
                 return RedirectToAction("Index");
             }
             catch

@@ -30,5 +30,10 @@ namespace Domain.Services
         {
             _clienteRepository.Edit(cliente);
         }
+
+        public void Delete(Cliente cliente)
+        {
+            _clienteRepository.Delete(cliente);
+        }
     }
 }

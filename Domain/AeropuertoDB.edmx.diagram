@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="AeModel.Avion" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="AeModel.Cliente" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AeModel.Localidad" Width="1.5" PointX="1.5" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AeModel.Pai" Width="1.5" PointX="1.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Pai" Width="1.5" PointX="10" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AeModel.Reserva" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="AeModel.TarjetaEmbarque" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="AeModel.Vuelo" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />

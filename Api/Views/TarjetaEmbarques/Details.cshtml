@@ -1,0 +1,36 @@
+﻿@model Domain.TarjetaEmbarque
+
+<div>
+    <h4>TarjetaEmbarque</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reserva.Id_reserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reserva.Id_reserva)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_tarjetaEmbarque }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

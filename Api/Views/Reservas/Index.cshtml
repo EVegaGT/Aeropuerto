@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Domain.Reserva>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Asientos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vuelo.Id_vuelo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asientos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vuelo.Id_vuelo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_reserva }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_reserva }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_reserva })
+        </td>
+    </tr>
+}
+
+</table>

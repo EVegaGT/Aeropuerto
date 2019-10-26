@@ -27,5 +27,12 @@ namespace Domain.Repositories
             aeEntities.Clientes.AddOrUpdate(cliente);
             aeEntities.SaveChanges();
         }
+
+        public void Delete(Cliente cliente)
+        {
+            aeEntities.Clientes.Remove(cliente);
+            aeEntities.SaveChanges();
+        }
+
     }
 }
