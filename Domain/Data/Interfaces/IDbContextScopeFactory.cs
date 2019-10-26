@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* 
+ * Copyright (C) 2014 Mehdi El Gueddari
+ * http://mehdi.me
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
 
-namespace Domain.Data
+using System;
+using System.Data;
+
+namespace Domain.Data.Interfaces
 {
+    /// <summary>
+    /// Convenience methods to create a new ambient DbContextScope. This is the prefered method
+    /// to create a DbContextScope.
+    /// </summary>
     public interface IDbContextScopeFactory
     {
         /// <summary>

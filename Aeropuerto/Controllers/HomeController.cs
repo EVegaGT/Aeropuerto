@@ -5,16 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Aeropuerto.Models;
+using Domain.Data;
+using Domain.Data.Interfaces;
 using Domain.Services;
 
 namespace Aeropuerto.Controllers
 {
     public class HomeController : Controller
     {
-        private IClienteService _clienteService;
+        private readonly IClienteService _clienteService;
+        protected readonly IDbContextScopeFactory DbOrgContextScopeFactory;
 
         public HomeController(IClienteService clienteService)
         {
+            DbOrgContextScopeFactory = ObjectFactory.Container.GetInstance<IDbContextScopeFactory>();
             _clienteService = clienteService;
         }
 

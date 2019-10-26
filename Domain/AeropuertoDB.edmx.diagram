@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4730857b93848ba867f99969618ea70" Name="Diagram1">
+        <EntityTypeShape EntityType="AeModel.Aeropuerto" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Asiento" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Avion" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Cliente" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Localidad" Width="1.5" PointX="1.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Pai" Width="1.5" PointX="1.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Reserva" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.TarjetaEmbarque" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AeModel.Vuelo" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="AeModel.FK__Aeropuert__Id_lo__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Vuelo__Aeropuert__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Vuelo__Aeropuert__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Asiento__Id_Avio__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Vuelo__Id_avion__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Reserva__Id_clie__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__TarjetaEm__Id_cl__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Localidad__Id_pa__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__Reserva__Id_vuel__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="AeModel.FK__TarjetaEm__Id_Re__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

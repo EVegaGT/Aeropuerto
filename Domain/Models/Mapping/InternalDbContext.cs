@@ -20,6 +20,6 @@ namespace Domain.Models.Mapping
             // DbInterception.Add(new CrmCommandInterceptor(GetType().Name));
         }
 
-        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
     }
 }

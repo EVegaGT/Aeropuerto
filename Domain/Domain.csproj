@@ -46,6 +46,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,14 +58,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aeropuerto.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AeropuertoDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AeropuertoDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AeropuertoDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AeropuertoDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AeropuertoDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Asiento.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Avion.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AmbientContextSuppressor.cs" />
+    <Compile Include="Data\AmbientDbContextLocator.cs" />
+    <Compile Include="Data\DbContextCollection.cs" />
+    <Compile Include="Data\DbContextReadOnlyScope.cs" />
+    <Compile Include="Data\DbContextScope.cs" />
+    <Compile Include="Data\DbContextScopeFactory.cs" />
     <Compile Include="Data\DbContextScopeOption.cs" />
-    <Compile Include="Data\IAmbientDbContextLocator.cs" />
-    <Compile Include="Data\IDbContextCollection.cs" />
-    <Compile Include="Data\IDbContextReadOnlyScope.cs" />
-    <Compile Include="Data\IDbContextScope.cs" />
-    <Compile Include="Data\IDbContextScopeFactory.cs" />
+    <Compile Include="Data\Interfaces\DbContextScopeOption.cs" />
+    <Compile Include="Data\Interfaces\IAmbientDbContextLocator.cs" />
+    <Compile Include="Data\Interfaces\IDbContextCollection.cs" />
+    <Compile Include="Data\Interfaces\IDbContextFactory.cs" />
+    <Compile Include="Data\Interfaces\IDbContextReadOnlyScope.cs" />
+    <Compile Include="Data\Interfaces\IDbContextScope.cs" />
+    <Compile Include="Data\Interfaces\IDbContextScopeFactory.cs" />
     <Compile Include="Data\ObjectFactory.cs" />
     <Compile Include="DomainRegistry.cs" />
+    <Compile Include="Localidad.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Mapping\InternalDbContext.cs" />
     <Compile Include="common\Entity.cs" />
     <Compile Include="common\IAggregateRoot.cs" />
@@ -69,15 +111,50 @@
     <Compile Include="common\IEntity.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Mapping\ClienteMap.cs" />
+    <Compile Include="Pai.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\CommonRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Reserva.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="TarjetaEmbarque.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vuelo.cs">
+      <DependentUpon>AeropuertoDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="AeropuertoDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AeropuertoDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AeropuertoDB.edmx.diagram">
+      <DependentUpon>AeropuertoDB.edmx</DependentUpon>
+    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AeropuertoDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AeropuertoDB.edmx</DependentUpon>
+      <LastGenOutput>AeropuertoDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AeropuertoDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AeropuertoDB.edmx</DependentUpon>
+      <LastGenOutput>AeropuertoDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
