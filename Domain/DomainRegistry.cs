@@ -24,6 +24,8 @@ namespace Domain
             For<ILocalidadRepository>().Use<LocalidadRepository>();
             For<IAeropuertoRepository>().Use<AeropuertoRepository>();
             For<IAvionRepository>().Use<AvionRepository>();
+            For<IAsientoRepository>().Use<AsientoRepository>();
+            For<IVueloRepository>().Use<VueloRepository>();
 
             For<IDbContextScopeFactory>().Use<DbContextScopeFactory>();
             For<IDbContextFactory>().Use(ctx => (IDbContextFactory)null);

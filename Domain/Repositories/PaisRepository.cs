@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Domain.Repositories
@@ -8,30 +9,40 @@ namespace Domain.Repositories
     {
         public List<Pai> GetAll()
         {
-            return aeEntities.Pais.ToList();
+            var paises = aeEntities.Pais
+                        .SqlQuery("Select * from pais")
+                        .ToList();
+            return paises;
         }
 
         public Pai GetPais(int id)
         {
-            return aeEntities.Pais.Find(id);
+            var pais = aeEntities.Pais
+                        .SqlQuery("Select * from pais where id_pais = @id", new SqlParameter("@id", id)).FirstOrDefault();
+            return pais;
         }
 
         public void Create(Pai pai)
         {
-            aeEntities.Pais.Add(pai);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "InsertPais @nombre",
+                new SqlParameter("@nombre", pai.Nombre));
         }
 
         public void Edit(Pai pai)
+
         {
-            aeEntities.Pais.AddOrUpdate(pai);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "UpdatePais @id, @nombre",
+                new SqlParameter("@id", pai.Id_pais),
+                new SqlParameter("@nombre", pai.Nombre));
         }
 
         public void Delete(Pai pai)
         {
-            aeEntities.Pais.Remove(pai);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "DeletePais @id",
+                new SqlParameter("@id", pai.Id_pais));
         }
     }
 }

@@ -116,20 +116,24 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AeropuertoRepository.cs" />
+    <Compile Include="Repositories\AsientoRepository.cs" />
     <Compile Include="Repositories\AvionRepository.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\CommonRepository.cs" />
     <Compile Include="Repositories\EmbarcacionRepository.cs" />
     <Compile Include="Repositories\IAeropuertoRepository.cs" />
+    <Compile Include="Repositories\IAsientoRepository.cs" />
     <Compile Include="Repositories\IAvionRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\IEmbarcacionRepository.cs" />
     <Compile Include="Repositories\ILocalidadRepository.cs" />
     <Compile Include="Repositories\IPaisRepository.cs" />
     <Compile Include="Repositories\IReservaRepository.cs" />
+    <Compile Include="Repositories\IVueloRepository.cs" />
     <Compile Include="Repositories\LocalidadRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
     <Compile Include="Repositories\ReservaRepository.cs" />
+    <Compile Include="Repositories\VueloRepository.cs" />
     <Compile Include="Reserva.cs">
       <DependentUpon>AeropuertoDB.tt</DependentUpon>
     </Compile>

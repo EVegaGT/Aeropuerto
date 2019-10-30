@@ -1,0 +1,52 @@
+﻿@model Domain.Vuelo
+
+<div>
+    <h4>Vuelo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_salida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_salida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aeropuerto.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aeropuerto.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aeropuerto1.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aeropuerto1.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avion.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_vuelo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,44 @@
+﻿@model Domain.Asiento
+
+<div>
+    <h4>Asiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fila)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Columna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Columna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Planta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Planta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avion.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_asiento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

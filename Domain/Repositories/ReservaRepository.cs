@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Domain.Repositories
@@ -9,30 +10,43 @@ namespace Domain.Repositories
     {
         public List<Reserva> GetAll()
         {
-            return aeEntities.Reservas.ToList();
+            var reservas = aeEntities.Reservas
+                       .SqlQuery("Select * from Reserva r")
+                       .ToList();
+            return reservas;
         }
 
         public Reserva GetReserva(int id)
         {
-            return aeEntities.Reservas.Find(id);
+            var reserva = aeEntities.Reservas
+                        .SqlQuery("Select * from Reserva where id_reserva = @id", new SqlParameter("@id", id)).FirstOrDefault();
+            return reserva;
         }
 
         public void Create(Reserva reserva)
         {
-            aeEntities.Reservas.Add(reserva);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "InsertarReserva @IdVuelo, @Asientos, @IdCliente",
+                new SqlParameter("@IdVuelo", reserva.Id_vuelo),
+                new SqlParameter("@Asientos", reserva.Asientos),
+                new SqlParameter("@IdCliente", reserva.Id_cliente));
         }
 
         public void Edit(Reserva reserva)
         {
-            aeEntities.Reservas.AddOrUpdate(reserva);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+               "UpdateReserva @id, @IdVuelo, @Asientos, @IdCliente",
+               new SqlParameter("@id", reserva.Id_reserva),
+               new SqlParameter("@IdVuelo", reserva.Id_vuelo),
+               new SqlParameter("@Asientos", reserva.Asientos),
+               new SqlParameter("@IdCliente", reserva.Id_cliente));
         }
 
         public void Delete(Reserva reserva)
         {
-            aeEntities.Reservas.Remove(reserva);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+               "DeleteReserva @id",
+               new SqlParameter("@id", reserva.Id_reserva));
         }
     }
 }
