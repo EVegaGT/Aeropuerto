@@ -25,12 +25,23 @@ namespace Domain.Repositories
 
         public void Create(Avion avion)
         {
-            aeEntities.Database.ExecuteSqlCommand(
-                "InsertAvion @nombre, @NumeroPlazas, @MaxColumna, @MaxFila",
-                new SqlParameter("@nombre", avion.Nombre),
-                new SqlParameter("@NumeroPlazas", avion.Numero_plazas),
-                new SqlParameter("@MaxColumna", avion.Max_Columna),
-                new SqlParameter("@MaxFila", avion.Max_Fila));
+            avion.Numero_plazas = avion.Max_Columna * avion.Max_Fila;
+            aeEntities.Avions.Add(avion);
+            aeEntities.SaveChanges();
+            for (var i = 0; i < avion.Max_Columna; i++)
+            {
+                for (var j = 0; j < avion.Max_Fila; j++)
+                {
+                    var planta = string.Format("P{0}-{1}", avion.Id_avion, i);
+                    aeEntities.Database.ExecuteSqlCommand(
+                        "InsertarAsiento @IdAvion, @fila, @columna, @planta",
+                        new SqlParameter("@IdAvion", avion.Id_avion),
+                        new SqlParameter("@fila", j),
+                        new SqlParameter("@columna", i),
+                        new SqlParameter("@planta", planta));
+                }
+            }
+
         }
 
         public void Edit(Avion avion)

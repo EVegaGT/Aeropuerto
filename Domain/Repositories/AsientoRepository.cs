@@ -24,14 +24,23 @@ namespace Domain.Repositories
 
         public void Create(Asiento asiento)
         {
-            aeEntities.Asientoes.Add(asiento);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "InsertarAsiento @IdAvion, @fila, @columna, @planta",
+                new SqlParameter("@IdAvion", asiento.Id_Avion),
+                new SqlParameter("@fila", asiento.Fila),
+                new SqlParameter("@columna", asiento.Columna),
+                new SqlParameter("@planta", asiento.Planta));
         }
 
         public void Edit(Asiento asiento)
         {
-            aeEntities.Asientoes.AddOrUpdate(asiento);
-            aeEntities.SaveChanges();
+            aeEntities.Database.ExecuteSqlCommand(
+                "UpdateAsiento @IdAsiento, @IdAvion, @fila, @columna, @planta",
+                new SqlParameter("@IdAsiento", asiento.Id_asiento),
+                new SqlParameter("@IdAvion", asiento.Id_Avion),
+                new SqlParameter("@fila", asiento.Fila),
+                new SqlParameter("@columna", asiento.Columna),
+                new SqlParameter("@planta", asiento.Planta));
         }
 
         public void Delete(Asiento asiento)
